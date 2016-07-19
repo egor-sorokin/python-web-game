@@ -1,0 +1,19 @@
+$def with (room)
+
+<h1 class="content-title"> $room.name </h1>
+
+<div class="content-text-container">
+    <pre class="content-text">
+        $room.description
+    </pre>
+</div>
+
+$if room.name == "death":
+    <p><a href="/zombie">Play Again?</a></p>
+$else:
+    <p>
+    <form action="/zombie_game" method="POST">
+        - <input type="text" name="action" class="content-input">
+    <input type="submit" value="Continue" class="continue-button">
+    </form>
+    </p>
